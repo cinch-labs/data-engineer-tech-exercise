@@ -3,10 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 data_generator.cpython-38.pyc
+files.json
 
 # C extensions
 *.so
-
+SOLUTION.md
 # Distribution / packaging
 .Python
 build/
