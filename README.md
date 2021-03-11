@@ -1,5 +1,7 @@
 # Snowflake Data Exercise - Starter Project
 
+cinch members supporting the session can find additional information [here](https://github.com/cinch-labs/data-engineer-tech-exercise-solution).
+
 ### Prerequisites
 
 #### Install Python 3.8.* or later.
@@ -32,6 +34,10 @@ Create the virtual environment in the root of the cloned project:
 You always want your virtual environment to be active when working on this project.
 
     source ./.venv/bin/activate
+
+If you are using Windows, you will need:
+
+    .venv\Scripts\activate.bat
 
 #### Installing Python requirements
 

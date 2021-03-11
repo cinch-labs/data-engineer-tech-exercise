@@ -59,9 +59,10 @@ Each transaction contains the customer id, details of what products they viewed 
 
 ```
 
-Note: when uploaded the files, you may wish to combine them first with:
+**Note**: when uploading the files, you may wish to combine them first. Do this with a language of your choice or with Bash, use the following:
 
     cat **/*.json > files.json
+
 
 **Products**  
 Contains information about products such as the product id, model and make of a vehicle:
@@ -82,5 +83,5 @@ To arrive at this the following steps will need to be completed:
 * Create a Schema
 * Create tables for the data concerned
 * Upload the data
-* Create a user and role for Rylan, assign grants to the raw data uploaded
-* Create a view for the top 10 products viewed and give access to Rylan
+* Create a view for the top 10 products viewed
+* Create a user and role for Rylan, assign grants to the raw data uploaded and to the new view
