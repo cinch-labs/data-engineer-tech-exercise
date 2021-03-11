@@ -54,6 +54,8 @@ This should produce customers, products and transaction data under `./input_data
 
 #### Getting started
 
-Please save Snowflake model code in `snowflake` and infrastructure code in `infra` folder.
+Please save Snowflake model code in `snowflake` as `.sql` files.
 
 Update this README as code evolves, documenting the build.
+
+The task can be found [here](./TASK.md).
