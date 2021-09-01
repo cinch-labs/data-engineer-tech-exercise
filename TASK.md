@@ -6,6 +6,8 @@ This assessment is designed for candidates to demonstrate their knowledge of goo
 
 You can use Python to generate the required sample data (instructions for installing python on your machine, are in the links below). Please refer to the [README.md](./README.md) for instructions.
 
+You will also need to create a data source by building a Python script that makes an API call and wrangles the JSON response into a CSV file. The details of API endpoint will be mentioned below.
+
 ### Test Instructions
 The purpose of this exercise is to complete a small data pipeline in Snowflake that creates resources to warehouse data and produce an aggregate query to find useful insights.
 
@@ -71,11 +73,28 @@ Contains information about products such as the product id, model and make of a 
 | ---------- | ------------------- | ---------------- |
 | P100       | DS3 | CITROEN                |
 
+
+**API data**
+
+Make a GET request to the following endpoint: 
+    
+    https://search.api.cinch.co.uk/vehicles
+
+From the object returned by the API call, you can find the attributes required in the CSV file by accessing the following nested directory:
+
+```
+obj['facets]['makes']
+```
+
+Create and run a script that loads this data into a file named **api-data.csv**. We recommend using the '_requests_' library to make this call.
+
+
+
 ### Acceptance Criteria
 
-Create a simple data warehouse to ingest this data, create an RBAC model such that the BI team member Rylan can access the data.
+Create a simple data warehouse to ingest this data.
 
-Create a VIEW in Snowflake showing the Top 10 products viewed and give access to Rylan.
+Create a VIEW in Snowflake showing the Top 10 products viewed.
 
 To arrive at this the following steps will need to be completed:
 
@@ -84,4 +103,3 @@ To arrive at this the following steps will need to be completed:
 * Create tables for the data concerned
 * Upload the data
 * Create a view for the top 10 products viewed
-* Create a user and role for Rylan, assign grants to the raw data uploaded and to the new view
