@@ -4,7 +4,9 @@
 
 This assessment is designed for candidates to demonstrate their knowledge of good software and data engineering practices. The task should take 30-40 minutes to complete, we are interested in how you approach a problem, go about solving it and communicating your solution; it is not designed to catch you out.
 
-You can use Python to generate the required sample data (instructions for installing python on your machine, are in the links below). Please refer to the [README.md](./README.md) for instructions.
+You can use Python to generate some of the required sample data (instructions for installing python on your machine, are in the links below). Please refer to the [README.md](./README.md) for instructions.
+
+The rest of the data will need to be fetched by building a Python script that makes an API call and stores the data into a CSV file. The details of API endpoint and response structure are both shown below as well.
 
 ### Test Instructions
 The purpose of this exercise is to complete a small data pipeline in Snowflake that creates resources to warehouse data and produce an aggregate query to find useful insights.
@@ -21,7 +23,7 @@ User Story
 
 > cinch has a new data source detailing which products each user has viewed in a given session. The BI team require the data to be ingested and access set up through Snowflake; after ingestion the BI team need assistance in building a view which returns the most popular vehicles by number of views. Once this report has been created, a BI team member, Rylan Clark-Neal, will require access to the view.
 
-The input data sources are comprised of customers (in CSV format), transactions in the form of products viewed in a session (in JSON Lines format) and products (in CSV format). Their details are presented below:
+The input data sources are comprised of customers (in CSV format) and transactions in the form of products viewed in a session (in JSON Lines format). The Products data source will need to be created by buiding a script that makes an API call and writes the data into in a CSV file. Their details are presented below:
 
 **Customers**  
 Contains information about customers such as the customer id and the date when they joined:
@@ -64,12 +66,18 @@ Each transaction contains the customer id, details of what products they viewed 
     cat **/*.json > files.json
 
 
-**Products**  
-Contains information about products such as the product id, model and make of a vehicle:
+**Products API script**  
+This file will need to be created. It will contain information about products such as the product id, model and make of a vehicle:
 
 | PRODUCT_ID | MODEL | MAKE |
 | ---------- | ------------------- | ---------------- |
 | P100       | DS3 | CITROEN                |
+
+The relevant data can be retrieved by making a GET request to the following endpoint: 
+    
+    https://search.api.cinch.co.uk/vehicles
+
+Build a script that loads this data into a file named 'products.csv'
 
 ### Acceptance Criteria
 
@@ -84,4 +92,3 @@ To arrive at this the following steps will need to be completed:
 * Create tables for the data concerned
 * Upload the data
 * Create a view for the top 10 products viewed
-* Create a user and role for Rylan, assign grants to the raw data uploaded and to the new view
