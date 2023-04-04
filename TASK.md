@@ -75,7 +75,7 @@ Contains information about products such as the product id, model and make of a 
 
 Make a GET request to the following endpoint:
 
-    https://search-api.snc-prod.cinch.co.uk/vehicles
+    https://search-api.snc-prod.aws.cinch.co.uk/vehicles
 
 From the object returned by the API call, you can find the attributes required in the CSV file by accessing the following nested directory:
 
